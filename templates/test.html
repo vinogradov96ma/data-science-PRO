@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<style>
+    form {
+        margin: auto;
+        width: 35%;
+    }
+    .result {
+        margin: auto;
+        width: 35%;
+    }
+</style>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CM studies app</title>
+</head>
+<body>
+<form action="{{url_for('main')}}" method = "POST">
+    <fieldset>
+        <legend>Плотность, кг/м3</legend>
+        <input name = 'value2' type = "number" value = "1975.735" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Модуль упругости, ГПа</legend>
+        <input name = 'value3' type = "number" value = "739.923" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Количество отвердителя, м.%</legend>
+        <input name = 'value4' type = "number" value = "110.571" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Содержание эпоксидных групп,%_2</legend>
+        <input name = 'value5' type = "number" value = "22.244" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Температура вспышки, С_2</legend>
+        <input name = 'value6' type = "number" value = "285.882" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Поверхностная плотность, г/м2</legend>
+        <input name = 'value7' type = "number" value = "482.732" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Модуль упругости при растяжении, ГПа</legend>
+        <input name = 'value8' type = "number" value = "73.329" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Прочность при растяжении, МПа</legend>
+        <input name = 'value1' type = "number" value = "2461.491" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Потребление смолы, г/м2</legend>
+        <input name = 'value9' type = "number" value = "218.423" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Угол нашивки, град</legend>
+        <input name = 'value10' type = "number" value = "44.252" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Шаг нашивки</legend>
+        <input name = 'value11' type = "number" value = "6.899" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+        <legend>Плотность нашивки</legend>
+        <input name = 'value12' type = "number" value = "57.154" min="0"
+        max="10000" step="0.001"
+               required>
+        <br>
+
+        <input type = "submit">
+    </fieldset>
+</form>
+<div class="result" align="center">
+    {% if result %}
+        <br>
+        <p style="font-size:20px">
+            Спрогнозированное соотношение "матрица-наполнитель"
+        </p>
+    <p style="font-size:20px">
+        {{result}}
+    </p>
+    {% endif %}
+</div>
+</body>
+</html>
